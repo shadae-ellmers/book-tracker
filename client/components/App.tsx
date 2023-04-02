@@ -1,10 +1,29 @@
+import { useEffect } from 'react'
+import { useAppDispatch } from '../hooks/redux'
+import { fetchRead } from '../actions/read'
+import { Link, Route, Routes } from 'react-router-dom'
+import Home from './Home'
+
 function App() {
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(fetchRead())
+  }, [])
+
   return (
     <>
-      <header className="header">
-        <h1>My Collection</h1>
+      <header>
+        <Link to="/">
+          <h1>My Books</h1>
+        </Link>
       </header>
-      <section className="main">{/* add your code here */}</section>
+      <section>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* <Route path="/read" element={<ReadList />} /> */}
+        </Routes>
+      </section>
     </>
   )
 }
