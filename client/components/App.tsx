@@ -3,6 +3,7 @@ import { useAppDispatch } from '../hooks/redux'
 import { fetchRead } from '../actions/read'
 import { Link, Route, Routes } from 'react-router-dom'
 import Home from './Home'
+import ReadList from './ReadList'
 
 function App() {
   const dispatch = useAppDispatch()
@@ -21,7 +22,7 @@ function App() {
       <section>
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/read" element={<ReadList />} /> */}
+          <Route path="/read" element={<ReadList />} />
         </Routes>
       </section>
     </>
