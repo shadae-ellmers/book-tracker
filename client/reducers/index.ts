@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux'
 
-// import stuff from './stuff'
+import read from './read'
+import error from './error'
 
 export default combineReducers({
-  // stuff
+  read,
+  error,
 })
