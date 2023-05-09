@@ -7,9 +7,6 @@ exports.up = function (knex) {
     table.increments('id').primary()
     table.string('title')
     table.string('author')
-    table.string('date')
-    table.integer('rating')
-    table.integer('pages')
     table.string('cover')
   })
 }

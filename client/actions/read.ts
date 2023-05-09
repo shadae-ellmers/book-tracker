@@ -1,11 +1,11 @@
 import type { ThunkAction } from '../store'
-import { Read, ReadInfo } from '../../common/Read'
-import { getBooks } from '../apis/apiRead'
+import { Book, BookInfo } from '../../common/Book'
+import { getBooks } from '../apis/booksApi'
 import { setError } from './error'
 
-export type ReadAction = { type: 'SET_READ'; payload: Read[] }
+export type BookAction = { type: 'SET_READ'; payload: Book[] }
 
-export function showRead(setRead: Read[]): ReadAction {
+export function showRead(setRead: Book[]): BookAction {
   return {
     type: 'SET_READ',
     payload: setRead,

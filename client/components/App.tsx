@@ -4,6 +4,7 @@ import { fetchRead } from '../actions/read'
 import { Link, Route, Routes } from 'react-router-dom'
 import Home from './Home'
 import ReadList from './ReadList'
+import AddBook from './AddBook'
 
 function App() {
   const dispatch = useAppDispatch()
@@ -23,6 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/read" element={<ReadList />} />
+          <Route path="/addbook" element={<AddBook />} />
         </Routes>
       </section>
     </>

@@ -88,6 +88,8 @@
   "dependencies": {
     "@devacademy/eslint-config": "^1.8.0",
     "@redux-devtools/extension": "^3.2.3",
+    "dotenv": "^16.0.3",
+    "dotenv-webpack": "^8.0.1",
     "express": "^4.17.2",
     "knex": "^2.4.2",
     "pg": "^8.8.0",

@@ -1,10 +1,10 @@
-import { ReadAction } from '../actions/read'
-import { Read, ReadInfo } from '../../common/Read'
+import { BookAction } from '../actions/read'
+import { Book } from '../../common/Book'
 
 export default function (
-  state = [] as Read[],
-  { type, payload }: ReadAction
-): Read[] {
+  state = [] as Book[],
+  { type, payload }: BookAction
+): Book[] {
   switch (type) {
     case 'SET_READ':
       return payload
