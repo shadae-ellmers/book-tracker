@@ -19,7 +19,6 @@ function AddBook() {
     evt.preventDefault()
     searchForBook(bookSearch)
       .then((data) => {
-        console.log(data)
         setGoogleResults(data)
       })
       .catch((err) => console.log(err.message))
@@ -27,10 +26,10 @@ function AddBook() {
 
   const handleAdd = (book: GoogleBook) => {
     const formattedBook: Book = {
-      id: book.id,
-      title: book.title,
-      author: book.authors.toString(),
-      cover: book.thumbnail,
+      id: book.items.volumeInfo.id,
+      title: book.items.volumeInfo.title,
+      author: book.items.volumeInfo.authors.toString(),
+      cover: book.items.volumeInfo.thumbnail,
     }
     dispatch(addBookThunk(formattedBook))
     navigate('/read')
@@ -50,19 +49,21 @@ function AddBook() {
         />
         <input type="submit" />
       </form>
-
-      <div>
-        {googleResults?.map((book) => (
-          <div key={book.id}>
-            <h2>{book.title}</h2>
-            <img src={book.thumbnail} alt={`cover for ${book.title}`} />
-            <hr />
-            <div>
-              <button onClick={() => handleAdd(book)}>Add Book</button>
+      {bookSearch !== '' ? (
+        <div>
+          {googleResults.items?.map((book) => (
+            <div key={book.id}>
+              <h2>{book.volumeInfo.title}</h2>
+              <p>{book.volumeInfo.authors}</p>
+              <div>
+                <button onClick={() => handleAdd(book)}>Add Book</button>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      ) : (
+        <div></div>
+      )}
     </>
   )
 }

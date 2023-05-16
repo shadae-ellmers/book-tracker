@@ -9,8 +9,12 @@ export interface Book extends BookInfo {
 }
 
 export interface GoogleBook {
-  id: number
-  title: string
-  authors: object
-  thumbnail: string
+  items: {
+    volumeInfo: {
+      id: number
+      title: string
+      authors: object
+      thumbnail: string
+    }
+  }
 }
