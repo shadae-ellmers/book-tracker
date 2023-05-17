@@ -1,7 +1,7 @@
 export interface BookInfo {
+  book_id: string
   title: string
   author: string
-  cover: string
 }
 
 export interface Book extends BookInfo {
@@ -10,11 +10,18 @@ export interface Book extends BookInfo {
 
 export interface GoogleBook {
   items: {
+    id: string
     volumeInfo: {
-      id: number
       title: string
       authors: object
-      thumbnail: string
     }
+  }
+}
+
+export interface AGoogleBook {
+  id: string
+  volumeInfo: {
+    title: string
+    authors: object
   }
 }

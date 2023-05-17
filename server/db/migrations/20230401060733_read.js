@@ -5,6 +5,7 @@
 exports.up = function (knex) {
   return knex.schema.createTable('read', function (table) {
     table.increments('id').primary()
+    table.string('book_id')
     table.string('title')
     table.string('author')
     table.string('cover')

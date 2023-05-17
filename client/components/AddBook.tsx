@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useAppDispatch } from '../hooks/redux'
 import { ChangeEvent, FormEvent, useState } from 'react'
-import { Book, GoogleBook } from '../../common/Book'
+import { AGoogleBook, BookInfo, GoogleBook } from '../../common/Book'
 import { searchForBook } from '../apis/googleApi'
 import { addBookThunk } from '../actions/google'
 
@@ -24,15 +24,15 @@ function AddBook() {
       .catch((err) => console.log(err.message))
   }
 
-  const handleAdd = (book: GoogleBook) => {
-    const formattedBook: Book = {
-      id: book.items.volumeInfo.id,
-      title: book.items.volumeInfo.title,
-      author: book.items.volumeInfo.authors.toString(),
-      cover: book.items.volumeInfo.thumbnail,
+  const handleAdd = (book: AGoogleBook) => {
+    const formattedBook: BookInfo = {
+      book_id: book.id,
+      title: book.volumeInfo.title,
+      author: book.volumeInfo.authors.toString(),
     }
     dispatch(addBookThunk(formattedBook))
     navigate('/read')
+    window.location.reload()
   }
 
   return (
