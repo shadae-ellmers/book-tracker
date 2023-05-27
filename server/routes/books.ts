@@ -1,5 +1,5 @@
 import express from 'express'
-import { getAllBooks, addBook } from '../db/db'
+import { getAllBooks, addBook, addRating } from '../db/db'
 
 const router = express.Router()
 
@@ -19,7 +19,20 @@ router.post('/', (req, res) => {
     .then((bookArray) => {
       res.json(bookArray[0])
     })
-    .catch((err) => console.log(err.message))
+    .catch((err: Error) => {
+      res.status(500).send(err.message)
+    })
+})
+
+router.patch('/addrating', (req, res) => {
+  const user = req.body
+  addRating(user)
+    .then((user) => {
+      res.json(user)
+    })
+    .catch((err: Error) => {
+      res.status(500).send(err.message)
+    })
 })
 
 export default router
