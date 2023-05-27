@@ -50,6 +50,7 @@ export default function ReadList() {
                   name="rating"
                   onChange={changeHandler}
                 />
+                <button type="submit">Submit</button>
               </form>
             ) : (
               <></>
