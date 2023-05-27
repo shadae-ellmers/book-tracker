@@ -10,26 +10,23 @@ export default function ReadList() {
   const read = useAppSelector((state) => state.read)
   const [ratedBook, setRatedBook] = useState(0)
   const [addRating, setAddRating] = useState({
-    title: '',
-    author: '',
-    rating: 0,
+    rating: '',
   } as Book)
 
-  // test out use effect for listing books
-
   const clickHandler = (book: Book) => {
+    setAddRating(book)
     setRatedBook(book.id)
   }
 
   const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setAddRating({
       ...addRating,
-      [e.target.name]: Number([e.target.value]),
+      [e.target.name]: [e.target.value],
     })
   }
 
   const submitHandler = (evt: FormEvent) => {
-    evt.preventDefault
+    evt.preventDefault()
     dispatch(addRatingThunk(addRating))
   }
 

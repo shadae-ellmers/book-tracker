@@ -9,7 +9,7 @@ exports.up = function (knex) {
     table.string('title')
     table.string('author')
     table.string('cover')
-    table.integer('rating')
+    table.string('rating')
   })
 }
 

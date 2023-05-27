@@ -9,11 +9,11 @@ export default function (
     case 'SET_READ':
       return payload
     case 'ADD_RATING':
-      return state.map((user) => {
-        if (user.id === payload.id) {
-          return { ...user, ...payload }
+      return state.map((book) => {
+        if (book.id === payload.id) {
+          return { ...book, ...payload }
         }
-        return user
+        return book
       })
     default:
       return state

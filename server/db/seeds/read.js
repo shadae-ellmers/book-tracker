@@ -12,6 +12,7 @@ exports.seed = async function (knex) {
       title: 'The Veldt',
       author: 'Ray Bradbury',
       cover: 'null',
+      rating: '4',
     },
     {
       id: 2,
@@ -19,6 +20,7 @@ exports.seed = async function (knex) {
       title: "In My Father's Den",
       author: 'Maurice Gee',
       cover: 'null',
+      rating: '4',
     },
     {
       id: 3,
@@ -26,6 +28,7 @@ exports.seed = async function (knex) {
       title: 'Macbeth',
       author: 'William Shakespeare',
       cover: 'null',
+      rating: '4',
     },
     {
       id: 4,
@@ -33,6 +36,7 @@ exports.seed = async function (knex) {
       title: 'The Perks of Being a Wallflower',
       author: 'Stephen Chbosky',
       cover: 'null',
+      rating: '4',
     },
     {
       id: 5,
@@ -40,6 +44,7 @@ exports.seed = async function (knex) {
       title: 'The Hunger Games',
       author: 'Suzanne Collins',
       cover: 'null',
+      rating: '4',
     },
   ])
 }

@@ -24,11 +24,11 @@ router.post('/', (req, res) => {
     })
 })
 
-router.patch('/addrating', (req, res) => {
-  const user = req.body
-  addRating(user)
-    .then((user) => {
-      res.json(user)
+router.patch('/addrating/', (req, res) => {
+  const book = req.body
+  addRating(book)
+    .then((book) => {
+      res.json(book)
     })
     .catch((err: Error) => {
       res.status(500).send(err.message)

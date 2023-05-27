@@ -16,9 +16,9 @@ export function postOneBook(book: BookInfo) {
     })
 }
 
-export function addARating(user: Book) {
+export function addARating(book: Book) {
   return request
-    .patch(`${bookUrl}/addrating`)
-    .send(user)
+    .patch(`${bookUrl}/addrating/`)
+    .send(book)
     .then((res) => res.body)
 }

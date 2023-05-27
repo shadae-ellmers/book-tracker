@@ -33,11 +33,11 @@ export function fetchRead(): ThunkAction {
   }
 }
 
-export function addRatingThunk(user: Book): ThunkAction {
+export function addRatingThunk(book: Book): ThunkAction {
   return (dispatch) => {
-    return addARating(user)
+    return addARating(book)
       .then(() => {
-        dispatch(addRating(user))
+        dispatch(addRating(book))
       })
       .catch((err) => {
         dispatch(setError(err.message))
