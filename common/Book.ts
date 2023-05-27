@@ -1,5 +1,5 @@
 export interface BookInfo {
-  book_id: string
+  book_id?: string
   title: string
   author: string
   rating?: number

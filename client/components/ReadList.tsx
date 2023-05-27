@@ -2,13 +2,18 @@ import { Link } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../hooks/redux'
 import Read from './Read'
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
-import { BookInfo } from '../../common/Book'
+import { Book, BookInfo } from '../../common/Book'
+import { addRatingThunk } from '../actions/read'
 
 export default function ReadList() {
   const dispatch = useAppDispatch()
   const read = useAppSelector((state) => state.read)
   const [ratingButton, setRatingButton] = useState(false)
-  const [addRating, setAddRating] = useState('')
+  const [addRating, setAddRating] = useState({
+    title: '',
+    author: '',
+    rating: 0,
+  } as Book)
 
   // test out use effect for listing books
 
@@ -17,13 +22,15 @@ export default function ReadList() {
   }
 
   const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setAddRating(e.target.name)
+    setAddRating({
+      ...addRating,
+      [e.target.name]: Number([e.target.value]),
+    })
   }
 
   const submitHandler = (evt: FormEvent) => {
     evt.preventDefault
-    const ratingVal = Number(addRating)
-    dispatch(addRatingThunk(ratingVal))
+    dispatch(addRatingThunk(addRating))
   }
 
   return (
@@ -43,7 +50,7 @@ export default function ReadList() {
                     <label htmlFor="rating">Rating: </label>
                     <input
                       type="text"
-                      value={addRating}
+                      value={addRating.rating}
                       name="rating"
                       onChange={changeHandler}
                     />

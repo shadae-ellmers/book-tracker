@@ -8,6 +8,13 @@ export default function (
   switch (type) {
     case 'SET_READ':
       return payload
+    case 'ADD_RATING':
+      return state.map((user) => {
+        if (user.id === payload.id) {
+          return { ...user, ...payload }
+        }
+        return user
+      })
     default:
       return state
   }
