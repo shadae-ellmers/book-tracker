@@ -15,3 +15,10 @@ export function postOneBook(book: BookInfo) {
       return res.body
     })
 }
+
+export function addARating(user: Book) {
+  return request
+    .patch(`${bookUrl}/addrating`)
+    .send(user)
+    .then((res) => res.body)
+}

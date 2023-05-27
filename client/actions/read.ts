@@ -1,6 +1,6 @@
 import type { ThunkAction } from '../store'
 import { Book, BookInfo } from '../../common/Book'
-import { getBooks } from '../apis/booksApi'
+import { getBooks, addARating } from '../apis/booksApi'
 import { setError } from './error'
 
 export type BookAction =
@@ -35,7 +35,7 @@ export function fetchRead(): ThunkAction {
 
 export function addRatingThunk(user: Book): ThunkAction {
   return (dispatch) => {
-    return addRating(user)
+    return addARating(user)
       .then(() => {
         dispatch(addRating(user))
       })
