@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../hooks/redux'
 import Read from './Read'
-import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react'
 import { Book, BookInfo } from '../../common/Book'
 import { addRatingThunk } from '../actions/read'
 
 export default function ReadList() {
   const dispatch = useAppDispatch()
   const read = useAppSelector((state) => state.read)
-  const [ratingButton, setRatingButton] = useState(false)
+  const [ratedBook, setRatedBook] = useState(0)
   const [addRating, setAddRating] = useState({
     title: '',
     author: '',
@@ -17,8 +17,8 @@ export default function ReadList() {
 
   // test out use effect for listing books
 
-  const clickHandler = () => {
-    setRatingButton(!ratingButton)
+  const clickHandler = (book: Book) => {
+    setRatedBook(book.id)
   }
 
   const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -40,25 +40,19 @@ export default function ReadList() {
         {read.map((book) => (
           <div key={book.id}>
             <Read {...book} />
-            {book.rating ? (
-              <></>
+            <button onClick={() => clickHandler(book)}>Update Rating</button>
+            {ratedBook === book.id ? (
+              <form onSubmit={submitHandler}>
+                <label htmlFor="rating">Rating: </label>
+                <input
+                  type="text"
+                  value={addRating.rating}
+                  name="rating"
+                  onChange={changeHandler}
+                />
+              </form>
             ) : (
-              <>
-                <button onClick={() => clickHandler()}>Add Rating</button>
-                {ratingButton ? (
-                  <form onSubmit={submitHandler}>
-                    <label htmlFor="rating">Rating: </label>
-                    <input
-                      type="text"
-                      value={addRating.rating}
-                      name="rating"
-                      onChange={changeHandler}
-                    />
-                  </form>
-                ) : (
-                  <></>
-                )}
-              </>
+              <></>
             )}
           </div>
         ))}
