@@ -2,6 +2,7 @@ export interface BookInfo {
   book_id: string
   title: string
   author: string
+  rating?: number
 }
 
 export interface Book extends BookInfo {
