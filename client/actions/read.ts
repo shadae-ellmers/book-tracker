@@ -1,5 +1,5 @@
 import type { ThunkAction } from '../store'
-import { Book, BookInfo } from '../../common/Book'
+import { Book } from '../../common/Book'
 import { getBooks, addARating } from '../apis/booksApi'
 import { setError } from './error'
 

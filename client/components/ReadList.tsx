@@ -21,13 +21,14 @@ export default function ReadList() {
   const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setAddRating({
       ...addRating,
-      [e.target.name]: [e.target.value],
+      [e.target.name]: e.target.value,
     })
   }
 
   const submitHandler = (evt: FormEvent) => {
     evt.preventDefault()
     dispatch(addRatingThunk(addRating))
+    setRatedBook(0)
   }
 
   return (
