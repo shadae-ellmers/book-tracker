@@ -1,7 +1,7 @@
 import { ThunkAction } from '../store'
 import { GoogleBook, BookInfo } from '../../common/Book'
 import { searchForBook } from '../apis/googleApi'
-import { postOneBook } from '../apis/booksApi'
+import { postOneBook } from '../apis/readApi'
 import { setError } from './error'
 
 export const GOOGLE_DATA = 'GOOGLE_DATA'

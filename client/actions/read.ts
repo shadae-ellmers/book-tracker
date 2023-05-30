@@ -1,6 +1,6 @@
 import type { ThunkAction } from '../store'
 import { Book } from '../../common/Book'
-import { getBooks, addARating } from '../apis/booksApi'
+import { getBooks, addARating } from '../apis/readApi'
 import { setError } from './error'
 
 export type BookAction =

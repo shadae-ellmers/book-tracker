@@ -1,10 +1,10 @@
 import express from 'express'
-import { getAllBooks, addBook, addRating } from '../db/db'
+import { getAllRead, addRead, addRating } from '../db/db'
 
 const router = express.Router()
 
 router.get('/', (req, res) => {
-  getAllBooks()
+  getAllRead()
     .then((books) => {
       res.json(books)
     })
@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   const book = req.body
-  addBook(book)
+  addRead(book)
     .then((bookArray) => {
       res.json(bookArray[0])
     })

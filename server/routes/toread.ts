@@ -1,10 +1,10 @@
 import express from 'express'
-import { getAllToReadBooks } from '../db/db'
+import { getAllToRead } from '../db/db'
 
 const router = express.Router()
 
 router.get('/', (req, res) => {
-  getAllToReadBooks()
+  getAllToRead()
     .then((books) => {
       res.json(books)
     })

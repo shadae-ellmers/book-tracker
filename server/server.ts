@@ -1,6 +1,6 @@
 import express from 'express'
 import path from 'path'
-import books from './routes/books'
+import books from './routes/read'
 import toread from './routes/toread'
 
 const server = express()
