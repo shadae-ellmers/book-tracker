@@ -1,7 +1,7 @@
 import type { ThunkAction } from '../store'
 import { Book } from '../../common/Book'
-import { getToReadBooks } from '../apis/booksApi'
 import { setError } from './error'
+import { getToReadBooks } from '../apis/toreadApi'
 
 export type BookAction = { type: 'SET_TOREAD'; payload: Book[] }
 

@@ -22,16 +22,3 @@ export function addARating(book: Book) {
     .send(book)
     .then((res) => res.body)
 }
-
-export function getToReadBooks(): Promise<Book[]> {
-  return request.get(`${bookUrl}/toread`).then((res) => res.body)
-}
-
-export function postOneToReadBook(book: BookInfo) {
-  return request
-    .post(`${bookUrl}/toread`)
-    .send(book)
-    .then((res) => {
-      return res.body
-    })
-}
