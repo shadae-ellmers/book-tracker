@@ -3,9 +3,9 @@ import { useAppDispatch } from '../hooks/redux'
 import { ChangeEvent, FormEvent, useState } from 'react'
 import { AGoogleBook, BookInfo, GoogleBook } from '../../common/Book'
 import { searchForBook } from '../apis/googleApi'
-import { addBookThunk } from '../actions/google'
+import { addToReadThunk } from '../actions/google'
 
-function AddRead() {
+function AddToRead() {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
   const [bookSearch, setBookSearch] = useState('' as string)
@@ -30,8 +30,8 @@ function AddRead() {
       title: book.volumeInfo.title,
       author: book.volumeInfo.authors.toString(),
     }
-    dispatch(addBookThunk(formattedBook))
-    navigate('/read')
+    dispatch(addToReadThunk(formattedBook))
+    navigate('/toread')
   }
 
   return (
@@ -67,4 +67,4 @@ function AddRead() {
   )
 }
 
-export default AddRead
+export default AddToRead

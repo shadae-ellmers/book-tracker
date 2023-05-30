@@ -36,7 +36,7 @@ export default function Read() {
 
   return (
     <div>
-      <Link to="/addbook">Add Books</Link>
+      <Link to="/addread">Add Books</Link>
       <div>
         {read.map((book) => (
           <div key={book.id}>

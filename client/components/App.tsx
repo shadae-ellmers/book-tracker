@@ -3,6 +3,7 @@ import Home from './Home'
 import Read from './Read'
 import ToRead from './ToRead'
 import AddRead from './AddRead'
+import AddToRead from './AddToRead'
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/read" element={<Read />} />
           <Route path="/toread" element={<ToRead />} />
-          <Route path="/addbook" element={<AddRead />} />
+          <Route path="/addread" element={<AddRead />} />
+          <Route path="/addtoread" element={<AddToRead />} />
         </Routes>
       </section>
     </>

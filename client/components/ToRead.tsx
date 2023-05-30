@@ -14,7 +14,7 @@ export default function ToRead() {
 
   return (
     <div>
-      <Link to="/addbook">Add Books</Link>
+      <Link to="/addtoread">Add Books</Link>
       <div>
         {toread.map((book) => (
           <div key={book.id}>

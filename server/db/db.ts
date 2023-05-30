@@ -24,3 +24,7 @@ export function getAllToRead(db = connection): Promise<Book[]> {
 export function getToRead(id: number, db = connection): Promise<Book> {
   return db('toread').first().where({ id })
 }
+
+export function addToRead(book: Book, db = connection): Promise<Book[]> {
+  return db('toread').insert(book).returning(['id', 'title', 'author'])
+}
