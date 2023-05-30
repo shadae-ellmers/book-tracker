@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../hooks/redux'
 import Read from './Read'
 import { ChangeEvent, FormEvent, useState } from 'react'
-import { Book, BookInfo } from '../../common/Book'
+import { Book } from '../../common/Book'
 import { addRatingThunk } from '../actions/read'
 
 export default function ReadList() {
