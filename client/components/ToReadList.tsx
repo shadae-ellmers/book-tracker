@@ -20,7 +20,6 @@ export default function ToReadList() {
           <div key={book.id}>
             <h3>{book.title}</h3>
             <p>{book.author}</p>
-            <p>{book.rating}</p>
           </div>
         ))}
       </div>
