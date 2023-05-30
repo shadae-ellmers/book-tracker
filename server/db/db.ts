@@ -16,3 +16,11 @@ export function addBook(book: Book, db = connection): Promise<Book[]> {
 export function addRating(book: Book, db = connection): Promise<number> {
   return db('read').update(book).where('id', book.id)
 }
+
+export function getAllToReadBooks(db = connection): Promise<Book[]> {
+  return db('toread').select('*')
+}
+
+export function getToReadBook(id: number, db = connection): Promise<Book> {
+  return db('toread').first().where({ id })
+}
