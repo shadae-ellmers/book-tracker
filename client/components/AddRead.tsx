@@ -5,7 +5,7 @@ import { AGoogleBook, BookInfo, GoogleBook } from '../../common/Book'
 import { searchForBook } from '../apis/googleApi'
 import { addBookThunk } from '../actions/google'
 
-function AddBook() {
+function AddRead() {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
   const [bookSearch, setBookSearch] = useState('' as string)
@@ -68,4 +68,4 @@ function AddBook() {
   )
 }
 
-export default AddBook
+export default AddRead

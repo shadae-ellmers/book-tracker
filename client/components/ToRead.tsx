@@ -4,7 +4,7 @@ import { Book } from '../../common/Book'
 import { useEffect } from 'react'
 import { fetchToRead } from '../actions/toread'
 
-export default function ToReadList() {
+export default function ToRead() {
   const dispatch = useAppDispatch()
   const toread = useAppSelector((state) => state.toread as Book[])
 

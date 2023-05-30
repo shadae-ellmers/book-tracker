@@ -1,19 +1,10 @@
-import { useEffect } from 'react'
-import { useAppDispatch } from '../hooks/redux'
-import { fetchRead } from '../actions/read'
 import { Link, Route, Routes } from 'react-router-dom'
 import Home from './Home'
-import ReadList from './ReadList'
-import AddBook from './AddBook'
-import ToReadList from './ToReadList'
+import Read from './Read'
+import ToRead from './ToRead'
+import AddRead from './AddRead'
 
 function App() {
-  const dispatch = useAppDispatch()
-
-  useEffect(() => {
-    dispatch(fetchRead())
-  }, [])
-
   return (
     <>
       <header>
@@ -24,9 +15,9 @@ function App() {
       <section>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/read" element={<ReadList />} />
-          <Route path="/toread" element={<ToReadList />} />
-          <Route path="/addbook" element={<AddBook />} />
+          <Route path="/read" element={<Read />} />
+          <Route path="/toread" element={<ToRead />} />
+          <Route path="/addbook" element={<AddRead />} />
         </Routes>
       </section>
     </>
