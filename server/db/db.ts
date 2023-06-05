@@ -36,3 +36,7 @@ export function getAllCurrentRead(db = connection): Promise<Book[]> {
 export function addCurrent(book: Book, db = connection): Promise<Book[]> {
   return db('currentread').insert(book).returning(['id', 'title', 'author'])
 }
+
+export function deleteToRead(id: number, db = connection): Promise<number> {
+  return db('toread').del().where('id', id)
+}
