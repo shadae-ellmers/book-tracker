@@ -16,7 +16,7 @@ export default function ToRead() {
 
   const clickHandler = (book: Book) => {
     dispatch(addToCurrent(book))
-    // navigate('/read')
+    navigate('/')
   }
 
   return (
