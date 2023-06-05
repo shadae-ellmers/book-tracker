@@ -73,7 +73,7 @@ export function delReadThunk(id: number): ThunkAction {
   }
 }
 
-export function addToCurrent(book: BookInfo): ThunkAction {
+export function addToReadThunk(book: BookInfo): ThunkAction {
   return (dispatch) => {
     return postOneBook(book)
       .then((book) => {

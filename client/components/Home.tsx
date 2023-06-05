@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from '../hooks/redux'
 import { Book } from '../../common/Book'
 import { useEffect } from 'react'
 import { delCurrentThunk, fetchCurrentRead } from '../actions/currentread'
-import { delReadThunk } from '../actions/read'
+import { addToReadThunk } from '../actions/read'
 
 export default function Home() {
   const dispatch = useAppDispatch()
@@ -14,7 +14,7 @@ export default function Home() {
   }, [dispatch])
 
   const clickHandler = (book: Book, id: number) => {
-    dispatch(addReadThunk(book))
+    dispatch(addToReadThunk(book))
     dispatch(delCurrentThunk(id))
   }
 
