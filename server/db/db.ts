@@ -42,9 +42,9 @@ export function deleteToRead(id: number, db = connection): Promise<number> {
 }
 
 export function deleteRead(id: number, db = connection): Promise<number> {
-  return db('toread').del().where('id', id)
+  return db('read').del().where('id', id)
 }
 
 export function deleteCurrent(id: number, db = connection): Promise<number> {
-  return db('toread').del().where('id', id)
+  return db('currentread').del().where('id', id)
 }
