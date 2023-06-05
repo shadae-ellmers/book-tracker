@@ -14,8 +14,9 @@ export default function ToRead() {
     dispatch(fetchToRead())
   }, [dispatch])
 
-  const clickHandler = (book: Book) => {
+  const clickHandler = (book: Book, id: number) => {
     dispatch(addToCurrent(book))
+    dispatch(delToReadThunk(id))
     navigate('/')
   }
 
@@ -31,7 +32,7 @@ export default function ToRead() {
           <div key={book.id}>
             <h3>{book.title}</h3>
             <p>{book.author}</p>
-            <button onClick={() => clickHandler(book)}>
+            <button onClick={() => clickHandler(book, book.id)}>
               Currently Reading
             </button>
             <button onClick={() => deleteHandler(book.id)}>Remove</button>
