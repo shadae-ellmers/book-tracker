@@ -1,5 +1,5 @@
 import express from 'express'
-import { getAllRead, addRead, addRating } from '../db/db'
+import { getAllRead, addRead, addRating, deleteRead } from '../db/db'
 
 const router = express.Router()
 
@@ -27,6 +27,17 @@ router.post('/', (req, res) => {
 router.patch('/addrating/', (req, res) => {
   const book = req.body
   addRating(book)
+    .then((book) => {
+      res.json(book)
+    })
+    .catch((err: Error) => {
+      res.status(500).send(err.message)
+    })
+})
+
+router.delete('/delete/:id', (req, res) => {
+  const user = Number(req.params.id)
+  deleteRead(user)
     .then((book) => {
       res.json(book)
     })

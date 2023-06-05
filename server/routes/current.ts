@@ -1,5 +1,5 @@
 import express from 'express'
-import { addCurrent, getAllCurrentRead } from '../db/db'
+import { addCurrent, deleteCurrent, getAllCurrentRead } from '../db/db'
 
 const router = express.Router()
 
@@ -18,6 +18,17 @@ router.post('/', (req, res) => {
   addCurrent(book)
     .then((bookArray) => {
       res.json(bookArray[0])
+    })
+    .catch((err: Error) => {
+      res.status(500).send(err.message)
+    })
+})
+
+router.delete('/delete/:id', (req, res) => {
+  const user = Number(req.params.id)
+  deleteCurrent(user)
+    .then((book) => {
+      res.json(book)
     })
     .catch((err: Error) => {
       res.status(500).send(err.message)
