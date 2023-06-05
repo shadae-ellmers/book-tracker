@@ -8,6 +8,13 @@ export default function (
   switch (type) {
     case 'SET_READ':
       return payload
+    case 'SAVE_ONE_READ':
+      return state.map((book) => {
+        if (book.id === payload.id) {
+          return { ...book, ...payload }
+        }
+        return book
+      })
     case 'ADD_RATING':
       return state.map((book) => {
         if (book.id === payload.id) {
