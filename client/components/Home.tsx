@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../hooks/redux'
 import { Book } from '../../common/Book'
 import { useEffect } from 'react'
-import { fetchCurrentRead } from '../actions/currentread'
+import { delCurrentThunk, fetchCurrentRead } from '../actions/currentread'
 
 export default function Home() {
   const dispatch = useAppDispatch()
@@ -11,6 +11,10 @@ export default function Home() {
   useEffect(() => {
     dispatch(fetchCurrentRead())
   }, [dispatch])
+
+  const deleteHandler = (id: number) => {
+    dispatch(delCurrentThunk(id))
+  }
 
   return (
     <section>
@@ -26,6 +30,7 @@ export default function Home() {
           <div key={book.id}>
             <h3>{book.title}</h3>
             <p>{book.author}</p>
+            <button onClick={() => deleteHandler(book.id)}>Remove</button>
           </div>
         ))}
       </div>

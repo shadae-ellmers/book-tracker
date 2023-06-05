@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../hooks/redux'
 import { Book } from '../../common/Book'
 import { useEffect } from 'react'
-import { fetchToRead } from '../actions/toread'
+import { delToReadThunk, fetchToRead } from '../actions/toread'
 import { addToCurrent } from '../actions/currentread'
 
 export default function ToRead() {
@@ -19,6 +19,10 @@ export default function ToRead() {
     navigate('/')
   }
 
+  const deleteHandler = (id: number) => {
+    dispatch(delToReadThunk(id))
+  }
+
   return (
     <div>
       <Link to="/addtoread">Add Books</Link>
@@ -30,6 +34,7 @@ export default function ToRead() {
             <button onClick={() => clickHandler(book)}>
               Currently Reading
             </button>
+            <button onClick={() => deleteHandler(book.id)}>Remove</button>
           </div>
         ))}
       </div>

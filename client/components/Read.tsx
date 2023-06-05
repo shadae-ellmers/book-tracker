@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../hooks/redux'
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import { Book } from '../../common/Book'
-import { addRatingThunk, fetchRead } from '../actions/read'
+import { addRatingThunk, delReadThunk, fetchRead } from '../actions/read'
 
 export default function Read() {
   const dispatch = useAppDispatch()
@@ -34,6 +34,10 @@ export default function Read() {
     setRatedBook(0)
   }
 
+  const deleteHandler = (id: number) => {
+    dispatch(delReadThunk(id))
+  }
+
   return (
     <div>
       <Link to="/addread">Add Books</Link>
@@ -44,6 +48,7 @@ export default function Read() {
             <p>{book.author}</p>
             <p>{book.rating}</p>
             <button onClick={() => clickHandler(book)}>Update Rating</button>
+            <button onClick={() => deleteHandler(book.id)}>Remove</button>
             {ratedBook === book.id ? (
               <form onSubmit={submitHandler}>
                 <label htmlFor="rating">Rating: </label>
