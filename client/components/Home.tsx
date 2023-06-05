@@ -1,12 +1,13 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../hooks/redux'
 import { Book } from '../../common/Book'
 import { useEffect } from 'react'
 import { delCurrentThunk, fetchCurrentRead } from '../actions/currentread'
-import { addToReadThunk } from '../actions/read'
+import { addReadThunk } from '../actions/read'
 
 export default function Home() {
   const dispatch = useAppDispatch()
+  const navigate = useNavigate()
   const currentread = useAppSelector((state) => state.currentread as Book[])
 
   useEffect(() => {
@@ -14,8 +15,9 @@ export default function Home() {
   }, [dispatch])
 
   const clickHandler = (book: Book, id: number) => {
-    dispatch(addToReadThunk(book))
+    dispatch(addReadThunk(book))
     dispatch(delCurrentThunk(id))
+    navigate('/read')
   }
 
   const deleteHandler = (id: number) => {
