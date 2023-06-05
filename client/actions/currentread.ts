@@ -37,7 +37,6 @@ export function addToCurrent(book: BookInfo): ThunkAction {
   return (dispatch) => {
     return postOneCurrent(book)
       .then((book) => {
-        console.log('hi')
         dispatch(saveOneCurrent(book))
       })
       .catch((err) => {

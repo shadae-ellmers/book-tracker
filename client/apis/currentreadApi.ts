@@ -12,7 +12,6 @@ export function postOneCurrent(book: BookInfo) {
     .post(currentreadUrl)
     .send(book)
     .then((res) => {
-      console.log(book)
       return res.body
     })
 }

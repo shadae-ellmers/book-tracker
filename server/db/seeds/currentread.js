@@ -7,7 +7,7 @@ exports.seed = async function (knex) {
   await knex('currentread').del()
   await knex('currentread').insert([
     {
-      id: 1,
+      id: 0,
       book_id: 'a',
       title: 'The Knife of Never Letting Go',
       author: 'Patrick Ness',
