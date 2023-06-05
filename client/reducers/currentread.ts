@@ -15,6 +15,8 @@ export default function (
         }
         return book
       })
+    case 'DEL_CURRENT':
+      return state.filter((book) => book.id !== payload)
     default:
       return state
   }

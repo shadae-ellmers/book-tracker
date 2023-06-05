@@ -8,6 +8,8 @@ export default function (
   switch (type) {
     case 'SET_TOREAD':
       return payload
+    case 'DEL_TOREAD':
+      return state.filter((book) => book.id !== payload)
     default:
       return state
   }
