@@ -8,6 +8,13 @@ export default function (
   switch (type) {
     case 'SET_CURRENTREAD':
       return payload
+    case 'SAVE_ONE_CURRENT':
+      return state.map((book) => {
+        if (book.id === payload.id) {
+          return { ...book, ...payload }
+        }
+        return book
+      })
     default:
       return state
   }
