@@ -15,3 +15,9 @@ export function postOneToReadBook(book: BookInfo) {
       return res.body
     })
 }
+
+export function deleteAToRead(id: number) {
+  return request.delete(`${toreadUrl}/delete/${id}`).then((book) => {
+    book.body
+  })
+}

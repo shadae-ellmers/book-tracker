@@ -15,3 +15,9 @@ export function postOneCurrent(book: BookInfo) {
       return res.body
     })
 }
+
+export function deleteACurrent(id: number) {
+  return request.delete(`${currentreadUrl}/delete/${id}`).then((book) => {
+    book.body
+  })
+}

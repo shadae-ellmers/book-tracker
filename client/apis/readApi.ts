@@ -22,3 +22,9 @@ export function addARating(book: Book) {
     .send(book)
     .then((res) => res.body)
 }
+
+export function deleteARead(id: number) {
+  return request.delete(`${bookUrl}/delete/${id}`).then((book) => {
+    book.body
+  })
+}
