@@ -7,7 +7,7 @@ import { addRatingThunk, delReadThunk, fetchRead } from '../actions/read'
 export default function Read() {
   const dispatch = useAppDispatch()
   const read = useAppSelector((state) => state.read)
-  const [ratedBook, setRatedBook] = useState(0)
+  const [ratedBook, setRatedBook] = useState(0.1)
   const [addRating, setAddRating] = useState({
     rating: '',
   } as Book)
@@ -31,7 +31,7 @@ export default function Read() {
   const submitHandler = (evt: FormEvent) => {
     evt.preventDefault()
     dispatch(addRatingThunk(addRating))
-    setRatedBook(0)
+    setRatedBook(0.1)
   }
 
   const deleteHandler = (id: number) => {
