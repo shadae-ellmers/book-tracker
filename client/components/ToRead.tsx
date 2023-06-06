@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../hooks/redux'
-import { Book } from '../../common/Book'
+import { Book, BookInfo } from '../../common/Book'
 import { useEffect } from 'react'
 import { delToReadThunk, fetchToRead } from '../actions/toread'
 import { addCurrentThunk } from '../actions/currentread'
@@ -15,10 +15,10 @@ export default function ToRead() {
   }, [dispatch])
 
   const clickHandler = (book: Book, id: number) => {
-    const formattedBook: Book = {
-      id: book.id + 1,
+    const formattedBook: BookInfo = {
       title: book.title,
       author: book.author,
+      book_id: book.book_id,
     }
     dispatch(addCurrentThunk(formattedBook))
     // delete not working
