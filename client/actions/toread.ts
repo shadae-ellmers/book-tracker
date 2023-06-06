@@ -1,7 +1,7 @@
 import type { ThunkAction } from '../store'
 import { Book } from '../../common/Book'
 import { setError } from './error'
-import { getToReadBooks } from '../apis/toreadApi'
+import { deleteAToRead, getToReadBooks } from '../apis/toreadApi'
 import { deleteACurrent } from '../apis/currentreadApi'
 
 export type BookAction =
@@ -36,7 +36,7 @@ export function fetchToRead(): ThunkAction {
 
 export function delToReadThunk(id: number): ThunkAction {
   return (dispatch) => {
-    return deleteACurrent(id)
+    return deleteAToRead(id)
       .then(() => {
         dispatch(delToRead(id))
       })

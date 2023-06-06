@@ -21,7 +21,6 @@ export default function ToRead() {
       book_id: book.book_id,
     }
     dispatch(addCurrentThunk(formattedBook))
-    // delete not working
     dispatch(delToReadThunk(id))
     navigate('/')
   }
