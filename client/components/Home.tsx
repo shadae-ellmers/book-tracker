@@ -26,17 +26,11 @@ export default function Home() {
 
   return (
     <section>
-      <div>
-        <Link to="/read">Read</Link>
-      </div>
-      <div>
-        <Link to="/toread">To Read</Link>
-      </div>
-      <h3>Currently Reading:</h3>
+      <p>Currently Reading:</p>
       <div>
         {currentread.map((book) => (
           <div key={book.id}>
-            <h3>{book.title}</h3>
+            <p>{book.title}</p>
             <p>{book.author}</p>
             <button onClick={() => clickHandler(book, book.id)}>
               Finished Reading

@@ -1,4 +1,4 @@
-import { Link, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import Home from './Home'
 import Read from './Read'
 import ToRead from './ToRead'
@@ -8,10 +8,22 @@ import AddToRead from './AddToRead'
 function App() {
   return (
     <>
-      <header>
-        <Link to="/">
-          <h1>My Books</h1>
-        </Link>
+      <header className="navbar justify-content-around bg-danger">
+        <div>
+          <a className="text-decoration-none text-black" href="/read">
+            Read
+          </a>
+        </div>
+        <div>
+          <a className="text-decoration-none text-black" href="/">
+            All Things Books
+          </a>
+        </div>
+        <div>
+          <a className="text-decoration-none text-black" href="/toread">
+            Read
+          </a>
+        </div>
       </header>
       <section>
         <Routes>
@@ -27,3 +39,5 @@ function App() {
 }
 
 export default App
+
+// #FFEFCD #A58E74 #E09132 #424530
