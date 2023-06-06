@@ -25,8 +25,8 @@ router.post('/', (req, res) => {
 })
 
 router.delete('/delete/:id', (req, res) => {
-  const user = Number(req.params.id)
-  deleteCurrent(user)
+  const book = Number(req.params.id)
+  deleteCurrent(book)
     .then((book) => {
       res.json(book)
     })

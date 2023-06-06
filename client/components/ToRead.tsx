@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from '../hooks/redux'
 import { Book } from '../../common/Book'
 import { useEffect } from 'react'
 import { delToReadThunk, fetchToRead } from '../actions/toread'
-import { addToCurrent } from '../actions/currentread'
+import { addCurrentThunk } from '../actions/currentread'
 
 export default function ToRead() {
   const dispatch = useAppDispatch()
@@ -15,7 +15,13 @@ export default function ToRead() {
   }, [dispatch])
 
   const clickHandler = (book: Book, id: number) => {
-    dispatch(addToCurrent(book))
+    const formattedBook: Book = {
+      id: book.id + 1,
+      title: book.title,
+      author: book.author,
+    }
+    dispatch(addCurrentThunk(formattedBook))
+    // delete not working
     dispatch(delToReadThunk(id))
     navigate('/')
   }

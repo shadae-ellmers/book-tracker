@@ -45,7 +45,7 @@ export function fetchCurrentRead(): ThunkAction {
   }
 }
 
-export function addToCurrent(book: BookInfo): ThunkAction {
+export function addCurrentThunk(book: BookInfo): ThunkAction {
   return (dispatch) => {
     return postOneCurrent(book)
       .then((book) => {
