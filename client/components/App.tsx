@@ -8,21 +8,15 @@ import AddToRead from './AddToRead'
 function App() {
   return (
     <>
-      <header className="navbar justify-content-around bg-danger">
+      <header>
         <div>
-          <a className="text-decoration-none text-black" href="/read">
-            Read
-          </a>
+          <a href="/read">Read</a>
         </div>
         <div>
-          <a className="text-decoration-none text-black" href="/">
-            All Things Books
-          </a>
+          <a href="/">All Things Books</a>
         </div>
         <div>
-          <a className="text-decoration-none text-black" href="/toread">
-            Read
-          </a>
+          <a href="/toread">Read</a>
         </div>
       </header>
       <section>
