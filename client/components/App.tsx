@@ -9,15 +9,9 @@ function App() {
   return (
     <>
       <header>
-        <div>
-          <a href="/read">Read</a>
-        </div>
-        <div>
-          <a href="/">All Things Books</a>
-        </div>
-        <div>
-          <a href="/toread">Read</a>
-        </div>
+        <a href="/read">Read</a>
+        <a href="/">All Things Books</a>
+        <a href="/toread">Read</a>
       </header>
       <section>
         <Routes>
