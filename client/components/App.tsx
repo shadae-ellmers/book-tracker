@@ -9,7 +9,7 @@ import './app.css'
 function App() {
   return (
     <>
-      <header>
+      <header className="bg-fern text-ivory">
         <a href="/read">Read</a>
         <a href="/">All Things Books</a>
         <a href="/toread">Read</a>
