@@ -10,9 +10,15 @@ function App() {
   return (
     <>
       <header className="bg-fern text-ivory">
-        <a href="/read">Read</a>
-        <a href="/">All Things Books</a>
-        <a href="/toread">Read</a>
+        <a className="text-3xl" href="/read">
+          Read
+        </a>
+        <a className="text-5xl" href="/">
+          All Things Books
+        </a>
+        <a className="text-3xl" href="/toread">
+          Read
+        </a>
       </header>
       <section>
         <Routes>

@@ -39,7 +39,7 @@ export default function Read() {
   }
 
   return (
-    <div>
+    <div className="text-2xl">
       <Link to="/addread">Add Books</Link>
       <div>
         {read.map((book) => (

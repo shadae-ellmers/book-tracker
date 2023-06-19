@@ -30,7 +30,7 @@ export default function ToRead() {
   }
 
   return (
-    <div>
+    <div className="text-2xl">
       <Link to="/addtoread">Add Books</Link>
       <div>
         {toread.map((book) => (

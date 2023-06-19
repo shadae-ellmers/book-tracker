@@ -35,7 +35,7 @@ function AddToRead() {
   }
 
   return (
-    <>
+    <div className="text-2xl">
       <p>Add a book</p>
       <form onSubmit={handleSubmit}>
         <label htmlFor="title">Title</label>
@@ -63,7 +63,7 @@ function AddToRead() {
       ) : (
         <div></div>
       )}
-    </>
+    </div>
   )
 }
 

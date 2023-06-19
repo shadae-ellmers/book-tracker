@@ -25,7 +25,7 @@ export default function Home() {
   }
 
   return (
-    <section>
+    <section className="text-2xl">
       <p>Currently Reading:</p>
       <div>
         {currentread.map((book) => (
