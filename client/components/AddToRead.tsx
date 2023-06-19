@@ -35,7 +35,7 @@ function AddToRead() {
   }
 
   return (
-    <div className="text-2xl">
+    <div className="text-2xl leading-loose">
       <p>Add a book</p>
       <form onSubmit={handleSubmit}>
         <label htmlFor="title">Title</label>
@@ -52,8 +52,8 @@ function AddToRead() {
         <div>
           {googleResults.items?.map((book) => (
             <div key={book.id}>
-              <h2>{book.volumeInfo.title}</h2>
-              <p>{book.volumeInfo.authors}</p>
+              <h2 className="font-extrabold">{book.volumeInfo.title}</h2>
+              <p className="text-xl">{book.volumeInfo.authors}</p>
               <div>
                 <button onClick={() => handleAdd(book)}>Add Book</button>
               </div>

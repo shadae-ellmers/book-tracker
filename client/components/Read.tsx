@@ -39,13 +39,13 @@ export default function Read() {
   }
 
   return (
-    <div className="text-2xl">
+    <div className="text-2xl leading-loose">
       <Link to="/addread">Add Books</Link>
       <div>
         {read.map((book) => (
           <div key={book.id}>
-            <h3>{book.title}</h3>
-            <p>{book.author}</p>
+            <h3 className="font-extrabold">{book.title}</h3>
+            <p className="text-xl">{book.author}</p>
             <p>{book.rating}</p>
             <button onClick={() => clickHandler(book)}>Update Rating</button>
             <button onClick={() => deleteHandler(book.id)}>Remove</button>

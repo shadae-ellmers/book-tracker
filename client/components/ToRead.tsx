@@ -30,13 +30,13 @@ export default function ToRead() {
   }
 
   return (
-    <div className="text-2xl">
+    <div className="text-2xl leading-loose">
       <Link to="/addtoread">Add Books</Link>
       <div>
         {toread.map((book) => (
           <div key={book.id}>
-            <h3>{book.title}</h3>
-            <p>{book.author}</p>
+            <h3 className="font-extrabold">{book.title}</h3>
+            <p className="text-xl">{book.author}</p>
             <button onClick={() => clickHandler(book, book.id)}>
               Currently Reading
             </button>

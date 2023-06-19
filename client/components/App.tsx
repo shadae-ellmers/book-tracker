@@ -9,15 +9,15 @@ import './app.css'
 function App() {
   return (
     <>
-      <header className="bg-fern text-ivory">
-        <a className="text-3xl" href="/read">
+      <header className="bg-fern text-ivory leading-loose text-center">
+        <a className="text-3xl hover:text-natural" href="/read">
           Read
         </a>
-        <a className="text-5xl" href="/">
+        <a className="text-5xl underline hover:text-natural" href="/">
           All Things Books
         </a>
-        <a className="text-3xl" href="/toread">
-          Read
+        <a className="text-3xl hover:text-natural" href="/toread">
+          To Read
         </a>
       </header>
       <section>

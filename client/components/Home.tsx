@@ -25,13 +25,13 @@ export default function Home() {
   }
 
   return (
-    <section className="text-2xl">
-      <p>Currently Reading:</p>
+    <section className="text-2xl leading-loose">
+      <p className="underline">Currently Reading:</p>
       <div>
         {currentread.map((book) => (
           <div key={book.id}>
-            <p>{book.title}</p>
-            <p>{book.author}</p>
+            <p className="font-extrabold">{book.title}</p>
+            <p className="text-xl">{book.author}</p>
             <button onClick={() => clickHandler(book, book.id)}>
               Finished Reading
             </button>
