@@ -1,5 +1,7 @@
 const { join } = require('path')
 
+const Dotenv = require('dotenv-webpack')
+
 module.exports = {
   entry: join(__dirname, 'index.tsx'),
   output: {
@@ -7,6 +9,11 @@ module.exports = {
     filename: 'bundle.js',
   },
   mode: 'development',
+  plugins: [
+    new Dotenv({
+      path: join(__dirname, '../.env'),
+    }),
+  ],
   module: {
     rules: [
       {
