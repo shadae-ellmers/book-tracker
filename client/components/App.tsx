@@ -4,6 +4,7 @@ import Read from './Read'
 import ToRead from './ToRead'
 import AddRead from './AddRead'
 import AddToRead from './AddToRead'
+import './app.css'
 
 function App() {
   return (

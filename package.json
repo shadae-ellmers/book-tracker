@@ -1,7 +1,7 @@
 {
   "name": "my-fullstack-collection-scss",
   "version": "0.1.0",
-  "description": "Build a fullstack collection app, with SCSS",
+  "description": "A React, Redux, and Tailwind page to track personal reading",
   "repository": "https://github.com/dev-academy-challenges/my-fullstack-collection-scss",
   "main": "server/index.ts",
   "scripts": {
@@ -14,7 +14,8 @@
     "dev:server": "nodemon server/index.ts",
     "webpack": "webpack --config ./client/webpack.config.js",
     "knex": "knex --knexfile ./server/db/knexfile.js",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx ."
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
+    "format": "prettier -w '**/*.{js,jsx,ts,tsx}'"
   },
   "keywords": [
     "fullstack"
@@ -55,7 +56,7 @@
     "@types/react-dom": "^18.0.7",
     "@types/supertest": "^2.0.12",
     "babel-loader": "^8.2.2",
-    "css-loader": "^6.7.3",
+    "css-loader": "^6.8.1",
     "eslint": "^8.10.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jest": "^26.1.1",
@@ -87,14 +88,16 @@
   "dependencies": {
     "@devacademy/eslint-config": "^1.8.0",
     "@redux-devtools/extension": "^3.2.3",
+    "autoprefixer": "^10.4.14",
     "dotenv": "^16.0.3",
     "dotenv-webpack": "^8.0.1",
     "express": "^4.17.2",
     "knex": "^2.4.2",
     "pg": "^8.8.0",
-    "sass": "^1.63.4",
-    "sass-loader": "^13.3.2",
+    "postcss": "^8.4.24",
+    "postcss-loader": "^7.3.3",
     "sqlite3": "^5.1.2",
+    "style-loader": "^3.3.3",
     "superagent": "7.1.1",
     "ts-node": "^10.9.1"
   },
