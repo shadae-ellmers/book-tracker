@@ -32,7 +32,7 @@ function AddToRead() {
       cover: book.volumeInfo.imageLinks.thumbnail,
     }
     dispatch(addToReadThunk(formattedBook))
-    navigate('/toread')
+    // navigate('/toread')
   }
 
   return (

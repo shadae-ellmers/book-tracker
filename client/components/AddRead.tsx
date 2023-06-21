@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { useAppDispatch, useAppSelector } from '../hooks/redux'
+import { useAppDispatch } from '../hooks/redux'
 import { ChangeEvent, FormEvent, useState } from 'react'
 import { AGoogleBook, BookInfo, GoogleBook } from '../../common/Book'
 import { searchForBook } from '../apis/googleApi'
@@ -32,7 +32,7 @@ function AddRead() {
       cover: book.volumeInfo.imageLinks.thumbnail,
     }
     dispatch(addBookThunk(formattedBook))
-    navigate('/read')
+    // navigate('/read')
   }
 
   return (

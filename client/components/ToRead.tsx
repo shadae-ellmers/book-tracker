@@ -19,6 +19,7 @@ export default function ToRead() {
       title: book.title,
       author: book.author,
       book_id: book.book_id,
+      cover: book.cover,
     }
     dispatch(addCurrentThunk(formattedBook))
     dispatch(delToReadThunk(id))
