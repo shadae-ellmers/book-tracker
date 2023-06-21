@@ -26,7 +26,7 @@ export default function Home() {
 
   return (
     <section className="text-2xl leading-loose">
-      <p className="underline">Currently Reading:</p>
+      <p className="underline text-3xl font-extrabold">Currently Reading</p>
       <div>
         {currentread.map((book) => (
           <div key={book.id}>
