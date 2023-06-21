@@ -50,5 +50,3 @@ function App() {
 }
 
 export default App
-
-// #FFEFCD #A58E74 #E09132 #424530
