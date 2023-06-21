@@ -10,25 +10,38 @@ function App() {
   return (
     <>
       <header className="bg-fern text-ivory leading-loose text-center">
-        <a className="text-3xl hover:text-natural" href="/read">
-          Read
-        </a>
         <a className="text-5xl underline hover:text-natural" href="/">
           All Things Books
         </a>
-        <a className="text-3xl hover:text-natural" href="/toread">
-          To Read
-        </a>
       </header>
-      <section>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/read" element={<Read />} />
-          <Route path="/toread" element={<ToRead />} />
-          <Route path="/addread" element={<AddRead />} />
-          <Route path="/addtoread" element={<AddToRead />} />
-        </Routes>
-      </section>
+      <div className="flex min-h-screen">
+        <nav className="w-1/5 bg-fern text-ivory leading-loose">
+          <a className="block py-2 px-4 text-3xl hover:text-natural" href="/">
+            Home
+          </a>
+          <a
+            className="block py-2 px-4 text-3xl hover:text-natural"
+            href="/read"
+          >
+            Read
+          </a>
+          <a
+            className="block py-2 px-4 text-3xl hover:text-natural"
+            href="/toread"
+          >
+            To Read
+          </a>
+        </nav>
+        <section className="w-4/5">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/read" element={<Read />} />
+            <Route path="/toread" element={<ToRead />} />
+            <Route path="/addread" element={<AddRead />} />
+            <Route path="/addtoread" element={<AddToRead />} />
+          </Routes>
+        </section>
+      </div>
     </>
   )
 }
