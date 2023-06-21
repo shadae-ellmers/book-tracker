@@ -29,6 +29,7 @@ function AddToRead() {
       book_id: book.id,
       title: book.volumeInfo.title,
       author: book.volumeInfo.authors.toString(),
+      cover: book.volumeInfo.imageLinks.thumbnail,
     }
     dispatch(addToReadThunk(formattedBook))
     navigate('/toread')
@@ -54,6 +55,10 @@ function AddToRead() {
             <div key={book.id}>
               <h2 className="font-extrabold">{book.volumeInfo.title}</h2>
               <p className="text-xl">{book.volumeInfo.authors}</p>
+              <img
+                src={book.volumeInfo.imageLinks.thumbnail}
+                alt="book cover"
+              />
               <div>
                 <button onClick={() => handleAdd(book)}>Add Book</button>
               </div>

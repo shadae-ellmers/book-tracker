@@ -3,6 +3,7 @@ export interface BookInfo {
   title: string
   author: string
   rating?: string
+  cover?: string
 }
 
 export interface Book extends BookInfo {
@@ -15,6 +16,9 @@ export interface GoogleBook {
     volumeInfo: {
       title: string
       authors: object
+      imageLinks: {
+        thumbnail: string
+      }
     }
   }
 }
@@ -24,5 +28,8 @@ export interface AGoogleBook {
   volumeInfo: {
     title: string
     authors: object
+    imageLinks: {
+      thumbnail: string
+    }
   }
 }

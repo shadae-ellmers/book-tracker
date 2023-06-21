@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { useAppDispatch } from '../hooks/redux'
+import { useAppDispatch, useAppSelector } from '../hooks/redux'
 import { ChangeEvent, FormEvent, useState } from 'react'
 import { AGoogleBook, BookInfo, GoogleBook } from '../../common/Book'
 import { searchForBook } from '../apis/googleApi'
@@ -29,6 +29,7 @@ function AddRead() {
       book_id: book.id,
       title: book.volumeInfo.title,
       author: book.volumeInfo.authors.toString(),
+      cover: book.volumeInfo.imageLinks.thumbnail,
     }
     dispatch(addBookThunk(formattedBook))
     navigate('/read')
@@ -54,6 +55,10 @@ function AddRead() {
             <div key={book.id}>
               <h2 className="font-extrabold">{book.volumeInfo.title}</h2>
               <p className="text-xl">{book.volumeInfo.authors}</p>
+              <img
+                src={book.volumeInfo.imageLinks.thumbnail}
+                alt="book cover"
+              />
               <div>
                 <button onClick={() => handleAdd(book)}>Add Book</button>
               </div>
