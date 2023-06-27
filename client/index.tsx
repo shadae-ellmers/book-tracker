@@ -7,7 +7,7 @@ import App from './components/App'
 
 document.addEventListener('DOMContentLoaded', () => {
   createRoot(document.getElementById('app') as HTMLElement).render(
-    <Router>
+    <Router basename="/">
       <Provider store={store}>
         <App />
       </Provider>
