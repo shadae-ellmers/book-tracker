@@ -1,9 +1,10 @@
 import { useNavigate } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../hooks/redux'
 import { Book } from '../../common/Book'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { delCurrentThunk, fetchCurrentRead } from '../actions/currentread'
 import { addReadThunk } from '../actions/read'
+import { data } from 'autoprefixer'
 
 export default function Home() {
   const dispatch = useAppDispatch()
@@ -29,7 +30,7 @@ export default function Home() {
       <p className="underline text-3xl font-extrabold">Currently Reading</p>
       {/* map not working on deploy */}
       <div>
-        {currentread &&
+        {currentread.length &&
           currentread.map((book) => (
             <div key={book.id} className="flex flex-row py-3">
               <img src={book.cover} alt="book cover" className="block pr-5" />
