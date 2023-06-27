@@ -96,6 +96,7 @@
     "pg": "^8.8.0",
     "postcss": "^8.4.24",
     "postcss-loader": "^7.3.3",
+    "semver": "^7.5.3",
     "sqlite3": "^5.1.2",
     "style-loader": "^3.3.3",
     "superagent": "7.1.1",
