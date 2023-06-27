@@ -1,5 +1,6 @@
 {
-  "name": "my-fullstack-collection-scss",
+  "name": "react-app",
+  "homepage": ".",
   "version": "0.1.0",
   "description": "A React, Redux, and Tailwind page to track personal reading",
   "repository": "https://github.com/dev-academy-challenges/my-fullstack-collection-scss",
