@@ -1,10 +1,9 @@
 import { useNavigate } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../hooks/redux'
 import { Book } from '../../common/Book'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { delCurrentThunk, fetchCurrentRead } from '../actions/currentread'
 import { addReadThunk } from '../actions/read'
-import { data } from 'autoprefixer'
 
 export default function Home() {
   const dispatch = useAppDispatch()
@@ -13,7 +12,7 @@ export default function Home() {
 
   useEffect(() => {
     dispatch(fetchCurrentRead())
-  }, [dispatch])
+  }, [])
 
   const clickHandler = (book: Book, id: number) => {
     dispatch(addReadThunk(book))
