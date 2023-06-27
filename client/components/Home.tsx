@@ -28,7 +28,7 @@ export default function Home() {
     <section className="text-2xl leading-loose">
       <p className="underline text-3xl font-extrabold">Currently Reading</p>
       <div>
-        {currentread.map((book) => (
+        {/* {currentread.map((book) => (
           <div key={book.id} className="flex flex-row py-3">
             <img src={book.cover} alt="book cover" className="block pr-5" />
             <div className="flex flex-col justify-evenly">
@@ -68,7 +68,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        ))}
+        ))} */}
       </div>
     </section>
   )
